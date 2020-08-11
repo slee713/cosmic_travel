@@ -1,0 +1,13 @@
+<h1><%= @scientist.name %></h1>
+
+<h3><%= "Field of Study: #{@scientist.field_of_study.titlecase}" %></h3>
+<h3>Planets Visited: </h3>
+<ul>
+    <% @scientist.planets.each do |p| %>
+        <li><%= p.name %></li>
+    <% end %>
+</ul>
+
+<h5><%= link_to "Edit This Scientist", edit_scientist_path(@scientist) %></h5>
+<h5><%= button_to "Delete this Scientist", scientist_path(@scientist), method: :delete%></h5>
+<h5><%= link_to "List of Scientists", scientists_path %></h5>
